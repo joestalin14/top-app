@@ -1,14 +1,12 @@
-import {useEffect, useState} from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { withLayout } from '../layout/Layout'
 import { Htag } from '../components'
 import { Button } from '../components'
 import { Paragraph } from '../components'
 import { Tag } from '../components'
 import { Rating } from '../components'
-import { number } from "prop-types"
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	const clickBtn = (): void => {
 		console.log('click')
 	}
@@ -34,7 +32,7 @@ export default function Home(): JSX.Element {
 	}, [])
 
 	return (
-		<div>
+		<>
 			<Htag tag='h1'>Hello!</Htag>
 			<Htag tag='h1'>{ counter }</Htag>
 			<Button
@@ -85,6 +83,8 @@ export default function Home(): JSX.Element {
 				isEditable={true}
 				setRating={setRating}
 			/>
-		</div>
+		</>
 	)
 }
+
+export default withLayout(Home)
