@@ -1,0 +1,33 @@
+@import '../../styles/vars.scss';
+.button {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 10px;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	transition: .3s ease;
+	svg {
+		margin-left: 10px;
+	}
+}
+.primary {
+	background-color: $primary;
+	color: $white;
+	&:hover {
+		background-color: $primaryHover;
+	}
+}
+.ghost {
+	background: none;
+	color: $black;
+	border: 1px solid $grayLight;
+	&:hover {
+		border-color: $primary;
+		background-color: $primary;
+		color: $white;
+	}
+}
